@@ -1,0 +1,106 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: #f0fdf4;
+}
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Poppins&display=swap');
+body{
+    background-color: #dcfce7;
+    
+}
+
+header{
+    background:  #22c55e;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    width: 60vw;
+    height: 50vh;
+    background-color: #fff;
+    align-self: center;
+    opacity: 0;
+    transform: scale(20);
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 1s ease,transform 0.5s ease-in;
+}
+.game-board.show{
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(25vh)  scale(1);
+}
+.spot{
+    background-color: #22c55e  ;
+    border: #fff 1px solid;
+    font-size: 4rem
+}
+main{
+    padding: 2rem;
+    display: flex;
+  
+    justify-content: center;
+}
+.res{
+    transform: translate(-15vw,55vh);
+    color:#22c55e;
+}
+.game-mode button,.players-names button , .res-btn{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    padding: 0.5rem;
+    width: 15vw;
+    font-size: 1rem;
+    background-color: #22c55e;
+}
+
+.game-mode.hidden{
+opacity: 0;
+}
+
+.players-names{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: absolute;
+    top: 30vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+.players-names.show{
+opacity:1;
+pointer-events: all;
+}
+.op.hidden{
+    opacity:0;
+    pointer-events: none; 
+}
+label,input{
+    color: #22c55e;
+    font-size: 1.5rem;
+    max-width: 10vw;
+}
+.res-btn{
+    position: absolute;
+    top:90vh;
+    opacity: 0;
+    transform: scale(20);
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 1s ease,transform 0.5s ease-in;
+}
+.res-btn.show{
+    pointer-events: all;
+    opacity: 1;
+    transform:  scale(1);
+}

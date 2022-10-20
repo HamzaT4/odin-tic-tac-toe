@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h2> League of Tic Tac Toe</h2>
+  </header>
+  <main>
+    <div class="game-board">
+        <button pos="0" class="spot"></button>
+        <button pos="1" class="spot"></button>
+        <button pos="2" class="spot"></button>
+        <button pos="3" class="spot"></button>
+        <button pos="4" class="spot"></button>
+        <button pos="5" class="spot"></button>
+        <button pos="6" class="spot"></button>
+        <button pos="7" class="spot"></button>
+        <button pos="8" class="spot"></button>
+
+       
+
+    </div>
+
+    <button class="res-btn">Restart</button>
+    <div class="players-names">
+        <div class="xp">
+            <label for="x-player">X player:</label>
+            <input type="text" name="x-player" id="x-player">
+        </div>
+
+        <div class="op">
+            <label for="o-player">O player:</label>
+            <input type="text" name="o-player" id="o-player">
+        </div>
+
+        <button class="name-btn"> Start!</button>
+    </div>
+    <div class="game-mode">
+        <button class="pvp">PvP</button>
+        <button class="pvai">P vs. AI</button>
+        
+    </div>
+    <h1 class="res">
+      
+    </h1>
+  </main>  
+</body>
+</html>
