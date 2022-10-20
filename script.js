@@ -48,7 +48,6 @@ const gameBoard = (()=> {
         if(gameBoard.boardArray[2]!=''&& gameBoard.boardArray[2]==gameBoard.boardArray[4]&&
          gameBoard.boardArray[2]==gameBoard.boardArray[6]){
             gameBoard.result=true;
-           
             DisplayController.alarmResult();
           
         }
@@ -56,9 +55,7 @@ const gameBoard = (()=> {
         if(gameBoard.boardArray[0]!=''&& gameBoard.boardArray[0]==gameBoard.boardArray[4]&&
          gameBoard.boardArray[0]==gameBoard.boardArray[8]){
             gameBoard.result=true;
-           
-            DisplayController.alarmResult();
-            
+            DisplayController.alarmResult();     
         }
             
         for (let i = 0; i < 3; i++) {
@@ -66,8 +63,7 @@ const gameBoard = (()=> {
             && gameBoard.boardArray[i]==gameBoard.boardArray[i+6]){
                 gameBoard.result=true;
                
-                DisplayController.alarmResult();
-                
+                DisplayController.alarmResult();      
         }}
 
         for (let i = 0; i < 7; i+=3) {
@@ -75,8 +71,7 @@ const gameBoard = (()=> {
             && gameBoard.boardArray[i]==gameBoard.boardArray[i+2]){
                 gameBoard.result=true;
                 
-                DisplayController.alarmResult();
-             
+                DisplayController.alarmResult();  
         }
         }
     }
@@ -122,14 +117,12 @@ const DisplayController = (()=> {
             gameBoard.boardArray[pressedBlock.target.getAttribute("pos")]='X';
             xTurn=false;
             round++;
-          
           }
           else if (!xTurn&& gameBoard.isPvP){
               pressedBlock.target.textContent='O';
               gameBoard.boardArray[pressedBlock.target.getAttribute("pos")]='O';
               xTurn=true;
               round++;
-   
           }
           gameBoard.boardCheck();
  
@@ -145,7 +138,6 @@ const DisplayController = (()=> {
             gameBoard.boardArray[chosenBlock.getAttribute("pos")]='O';
             xTurn=true;
             round++;
-           
           }
           gameBoard.boardCheck();
           if (round==9){
@@ -209,8 +201,7 @@ const minimax = (depth,aiTurn,position)=>{
 
   gameBoard.boardCheck();
   if(depth == 0 && !gameBoard.result){
-   
-    return 0;
+     return 0;
   }   
 
   if(gameBoard.result&&!aiTurn){ 
@@ -220,10 +211,8 @@ const minimax = (depth,aiTurn,position)=>{
   if(gameBoard.result&& aiTurn){ 
     gameBoard.result=false;
     return -1;
-
   }
-  
-  
+
   else if(aiTurn){
         let maxEval=-Infinity;
         
@@ -237,12 +226,8 @@ const minimax = (depth,aiTurn,position)=>{
               
             }
             maxEval=Math.max(maxEval,eval);
-             
-
-          }
-          
+          }  
         }
-        
         return maxEval;
     }
    else{
@@ -255,16 +240,12 @@ const minimax = (depth,aiTurn,position)=>{
             let eval =minimax(depth-1,true,position);
             position[i] = '';
             minEval=Math.min(minEval,eval);
-          
-          }
-          
+          }  
         }
-        
         return minEval;
         
     }
     
 }
-
 return{bestChoice,minimax,SpotEvaluation,depthCounter}
 })();
